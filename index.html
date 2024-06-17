@@ -1,7 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        #p5-sketch {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        #content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+        }
+    </style>
+</head>
 <body>
-<h1>Happy Go Lucky</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <div id="p5-sketch"></div>
+    <div id="content">
+        <nav class="container-fluid">
+            <ul>
+                <li><strong>My Portfolio</strong></li>
+            </ul>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#passion">Passion</a></li>
+            </ul>
+        </nav>
+
+        <main class="container">
+            <div class="grid">
+                <section>
+                    <hgroup>
+                        <h2 id="about">About Me</h2>
+                        <h3>Creative Coder & Developer</h3>
+                    </hgroup>
+                    <p>Hello everyone!</p>
+                    <p>Welcome to my corner of the digital world! I am a passionate developer with a special focus on creative coding. I thrive on experimenting with the latest technologies and crafting innovative projects that push the boundaries of what’s possible. Over the years, I've honed my skills in SQL development, recognizing the paramount importance of data. However, the real excitement for me lies in transforming this data into meaningful, visually captivating presentations. It's a thrilling challenge to bring data to life in creative ways.</p>
+                    <p>Beyond my technical pursuits, I have a deep interest in psychology and human behavior. I am driven by a profound desire to make the world a better place. With this goal in mind, I aim to highlight some of the critical issues facing our planet and explore their impact on our collective wellbeing.</p>
+                    <p>Through this platform, I will shed light on several global issues, such as ocean conservation and its intricate connection to climate change. We will delve into the vital role of rainforests, their influence on ocean currents, and the micro-climate changes they trigger, like cyclones and storms. My mission is to raise awareness and inspire a sense of responsibility in the next generation so that we can all work together to create a healthier, more sustainable planet.</p>
+                    <p>In addition to these topics, I am also passionate about exploring art through the lens of coding, especially with JavaScript. I hope you enjoy the artistic patterns I create as much as I enjoy making them.</p>
+                    <p>Thank you for joining me on this journey. Let’s learn, create, and make a positive impact together!</p>
+
+                    <h3 id="projects">Projects</h3>
+                    <p>Here are some of the projects I have worked on:</p>
+
+                    <figure>
+                        <!--img src="placeholder.jpg" alt="Project Image 1" /-->
+                        <figcaption><!--a href="#" target="_blank"-->Project 1: Abstract Creative Coding (Working in Progress)</a></figcaption>
+                    </figure>
+                    
+                    <figure>
+                        <!--img src="placeholder.jpg" alt="Project Image 2" /-->
+                        <figcaption><!--a href="#" target="_blank"-->Project 2: Data Analysis on Climate Change (Working in Progress)</a></figcaption>
+                    </figure>
+
+                    <h3>Project Details</h3>
+                    <p>Each project is a testament to my skills and creativity in coding. I focus on delivering unique and efficient solutions that push the boundaries of what is possible with code.</p>
+                    <p>I am learning Python, Data visualization with Python using Matplotlib, Numpy , Pandas and Seaborn. In order to present better I am also integrating my Front-end knowledges such as CSS, JavaScript and HTML, into these projects.</p>
+		</section>
+            </div>
+        </main>
+
+        <section id="passion" aria-label="Passion">
+            <div class="container">
+                <article>
+                    <hgroup>
+                        <h2>My Passion</h2>
+                        <h3>Understanding Human Behavior, Brain, and Psychology</h3>
+                    </hgroup>
+                    <p>I am deeply passionate about understanding human behavior and the intricacies of the human brain. My interest lies in exploring how psychology can help us better understand individuals, their actions, and their thought processes. This knowledge allows me to connect more deeply with people and enhances my ability to create user-centric projects that resonate on a personal level.</p>
+                    <p>Through my projects and continuous learning, I strive to bridge the gap between technology and human behavior, aiming to create innovative solutions that not only function well but also align with the psychological needs and behaviors of users.</p>
+                </article>
+            </div>
+        </section>
+
+        <footer class="container">
+            <small><a href="#">Contact</a> • <a href="#">Privacy Policy</a></small>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script>
+        function setup() {
+            let canvas = createCanvas(windowWidth, windowHeight);
+            canvas.parent('p5-sketch');
+            canvas.style('z-index', '-1');
+            noLoop();
+        }
+
+        function draw() {
+            background(255);
+            for (let i = 0; i < 10; i++) {
+                fill(random(255), random(255), random(255));
+                ellipse(random(width), random(height), random(50, 100));
+            }
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+            draw();
+        }
+    </script>
 </body>
 </html>
