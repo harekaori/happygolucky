@@ -101,7 +101,8 @@
             let canvas = createCanvas(windowWidth, windowHeight);
             canvas.parent('p5-sketch');
             canvas.style('z-index', '-1');
-            noLoop();
+            //noLoop();
+frameRate(0.1);
         }
 
         function draw() {
@@ -117,11 +118,13 @@
 		fill(random(150,255), random(100,150), random(100,200));
 		arc(random(width), random(height), random(50,100), random(80,150), random(0,50), PI + QUARTER_PI, PIE, 5);
             }
-        }
+
+       }
+
 
         function windowResized() {
-            resizeCanvas(windowWidth, windowHeight);
-            draw();
+            resizeCanvas(windowWidth, windowHeight);            
+	    draw();
         }
     </script>
 </body>
